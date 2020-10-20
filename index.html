@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Vacation Planner</title>
+    <script>
+        window.onload = function() {
+            document.getElementById("myRange").addEventListener('input', function() {
+                document.getElementById("budget").innerHTML = "$" + document.getElementById("myRange").value;
+            });
+        };
+    </script>
 </head>
 <body>
     <h1><img id="logo" src="images/logo.png" />Vacation Planner</h1>
@@ -19,7 +26,63 @@
       </div>
 
     <div class = "selection-pane">
-        <button>Hello</button>
+        <form>
+            <label for="destination">Enter Destination:</label>
+            <input type="text" id="destination" name="destination" value="Paris">
+            <label for="arrival">Arrival Date:</label>
+            <input type="text" id="arrival" name="arrival" value="1/1/2021">
+            <label for="departure">Departure Date:</label>
+            <input type="text" id="departure" name="departure" value="2/1/2021">
+            
+            <div class="slidecontainer">
+                <label for="myRange"><center><i>What's your budget?</i></center><span id="budget">$1000</span></label>
+                <input type="range" min="100" max="10000" value="1000" class="slider" id="myRange">
+                <label id="budgetMin">$100</label>
+                <label id="budgetMax">$10k+</label>
+            </div>
+        </form>
+        
     </div>
+
+    <table class="details-table">
+        <tr>
+            <td class = "pane-left selection-pane">
+                <h1>Filters:</h1>
+                <p>Interested in flying?</p>
+                <input type="radio" id="yes" name="option" value="yes">
+                <label for="yes">Yes</label><br>
+                <input type="radio" id="no" name="option" value="no">
+                <label for="no">No</label><br>
+
+                <p>Accomodation Type?</p>
+                <input type="radio" id="house" name="accomodation" value="house">
+                <label for="house">House</label><br>
+                <input type="radio" id="hotel" name="accomodation" value="hotel">
+                <label for="hote">Hotel</label><br>     
+                
+                <p>Transportation Type?</p>
+                <input type="radio" id="car" name="transportation" value="car">
+                <label for="car">Car</label><br>
+                <input type="radio" id="bus" name="transportation" value="bus">
+                <label for="bus">Bus</label><br>  
+                <input type="radio" id="train" name="transportation" value="train">
+                <label for="train">Train</label><br>  
+
+                <p>Interested in excursions?</p>
+                <input type="radio" id="yes-excursion" name="option-excursion" value="yes-excursion">
+                <label for="yes-excursion">Yes</label><br>
+                <input type="radio" id="no-excursion" name="option-excursion" value="no-excursion">
+                <label for="no-excursion">No</label><br>
+
+                
+            </td>
+            <td class = "pane-right selection-pane">
+                <h1>Our Matches:</h1>
+            </td>
+        </tr>
+    </table>
+
+
+
 </body>
 </html>
