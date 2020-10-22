@@ -4,17 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <title>Vacation Planner</title>
     <script>
         window.onload = function() {
             document.getElementById("myRange").addEventListener('input', function() {
-                document.getElementById("budget").innerHTML = "$" + document.getElementById("myRange").value;
+                document.getElementById("budget").value = "$" + parseInt(document.getElementById("myRange").value).toLocaleString();
+            });
+
+            document.getElementById("budget").addEventListener('input', function() {
+                var str = document.getElementById("budget").value;
+                if(str.length > 0){
+                    document.getElementById("myRange").value = parseInt(document.getElementById("budget").value.replace("$", "").replace(",", "")).toLocaleString();
+                }
             });
         };
     </script>
+     <script>
+        $( function() {
+          $( "#datepicker" ).datepicker();
+          $( "#calendar" ).datepicker();
+        } );
+    </script>
 </head>
 <body>
-    <h1><img id="logo" src="images/logo.png" />Vacation Planner</h1>
+    <h1 id="header"><img id="logo" src="images/logo.png" />Vacation Planner</h1>
     <div class="topnav">
         <a class="active" href="#home">Home</a>
         <a href="#about">About Us</a>
@@ -28,14 +44,18 @@
     <div class = "selection-pane">
         <form>
             <label for="destination">Enter Destination:</label>
-            <input type="text" id="destination" name="destination" value="Paris">
+            <input type="text" id="destination" size="20px" name="destination" value="Paris">
             <label for="arrival">Arrival Date:</label>
-            <input type="text" id="arrival" name="arrival" value="1/1/2021">
+            <input type="text" id="datepicker" size="10px" name="arrival">
             <label for="departure">Departure Date:</label>
-            <input type="text" id="departure" name="departure" value="2/1/2021">
+            <input type="text" id="calendar" size="10px" name="departure">
+            <label for="guests">Number of guests:</label>
+            <input type="text" id="guests" size="1px" name="guests">
             
             <div class="slidecontainer">
-                <label for="myRange"><center><i>What's your budget?</i></center><span id="budget">$1000</span></label>
+                <label for="myRange" id="budget_slider_title"><i>What's your budget?</i>
+                    <input type="text" min="100" max="10000" value="$1,000" id="budget">
+                </label>
                 <input type="range" min="100" max="10000" value="1000" class="slider" id="myRange">
                 <label id="budgetMin">$100</label>
                 <label id="budgetMax">$10k+</label>
@@ -77,6 +97,7 @@
                 
             </td>
             <td class = "pane-right selection-pane">
+                <h1>Destination Description:</h1>                
                 <h1>Our Matches:</h1>
             </td>
         </tr>

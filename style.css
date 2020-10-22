@@ -1,18 +1,26 @@
+@font-face  {
+  font-family: DidactGothic;
+  src: url("./fonts/DidactGothic-Regular.ttf");
+  font-weight: 400;
+}
 /* Add a black background color to the top navigation */
 body{
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: gainsboro;
+  font-family: DidactGothic;
+  background-color: #f3b05a;
 }
 .topnav {
-  background-color: #333;
+  background-color: #a3586d;
   overflow: hidden;
   border-radius: 10px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #5c4a72;
 }
 
 /* Style the links inside the navigation bar */
 .topnav a {
   float: left;
-  color: #f2f2f2;
+  color: white;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -27,8 +35,10 @@ body{
 
 /* Add a color to the active/current link */
 .topnav a.active {
-  background-color: orange;
+  background-color: #f46A4E;
   color: white;
+  border-radius: 1px;
+  border-color: black;
 }
 
 #logo {
@@ -38,11 +48,23 @@ body{
   padding-left: 10px;
 }
 
+#header {
+  color: #5c4a72;
+  font-weight: bold;
+}
+
 .selection-pane{
   padding: 20px;
-  background-color: rgb(235, 137, 72);
+  border-style: solid;
   border-radius: 10px;
+  border-color: #5c4a72;
+  border-width: 2px;
+  color: white;
+
+
+  background-color: #a3586d;
   margin-top: 20px;
+  vertical-align: top;
 }
 
 input {
@@ -81,6 +103,9 @@ input {
   transition: opacity .2s;
 }
 
+#budget_slider_title{
+  font-size: 20px;
+}
 /* Mouse-over effects */
 .slider:hover {
   opacity: 1; /* Fully shown on mouse-over */
