@@ -34,8 +34,8 @@
     <div class="topnav">
         <a href="index.html">Home</a>
         <a href="#about">About Us</a>
-        <a class="active" href="#flights">Flights</a>
-        <a href="housing.html">Housing</a>
+        <a href="flight.html">Flights</a>
+        <a class="active" href="#housing">Housing</a>
         <a href="#commuting">Commuting</a>
         <a href="#attractions">Attractions</a>
         <a href="#restaurants">Restaurants</a>
@@ -43,14 +43,13 @@
 
     <div class = "selection-pane">
         <form>
-            <label for="initial">Leaving From:</label>
-            <input type="text" id="initial" size="20px" name="initial" value="Paris">
-            <label for="destination">Going To:</label>
-            <input type="text" id="destination" size="20px" name="destination" value="Toronto">
-            <label for="arrival">Arrival Date:</label>
-            <input type="text" id="datepicker" size="10px" name="arrival">
-            <label for="departure">Departure Date:</label>
-            <input type="text" id="calendar" size="10px" name="departure">
+            <label for="location">Enter Location:</label>
+            <input type="text" id="location" size="20px" name="location" value="Paris">
+            <label for="checkin">Check In:</label>
+            <input type="text" id="datepicker" size="10px" name="checkin">
+
+            <label for="checkout">Check Out:</label>
+            <input type="text" id="calendar" size="10px" name="checkout">
             
             <div class="slidecontainer">
                 <label for="myRange" id="budget_slider_title"><i>What's your budget?</i>
@@ -68,32 +67,34 @@
         <tr>
             <td class = "pane-left selection-pane">
                 <h1>Filters:</h1>
-                <p>Airlines</p>
-                <input type="radio" id="American Airlines" name="airlines" value="Ameircan Airlines">
-                <label for="American Airlines">American Airlines</label><br>
+                <p>Types of Housing</p>
+                <input type="radio" id="Airbnb" name="housing" value="Airbnb">
+                <label for="Airbnb">Airbnb</label><br>
 
-                <input type="radio" id="Delta" name="airlines" value="Delta">
-                <label for="Delta">Delta</label><br>
+                <input type="radio" id="Rental Homes" name="housing" value="Rental Homes">
+                <label for="Rental Homes">Rental Homes</label><br>
 
-                <input type="radio" id="Southwest" name="airlines" value="Southwest">
-                <label for="Southwest">Southwest</label><br>
+                <input type="radio" id="Hotels" name="housing" value="Hotels">
+                <label for="Hotels">Hotels</label><br>
 
-                <p>Flight Type</p>
-                <input type="radio" id="One-way" name="type" value="One-way">
-                <label for="One-way">One-way</label><br>
+                <p>Number of Guests</p>
+                <input type="text" id="Guests" name="Guests" value="2">   
                 
-                <input type="radio" id="Round Trip" name="type" value="Round Trip">
-                <label for="Round Trip">Round Trip</label><br>            
-                
-                <p>Number of Stops</p>
-                <input type="radio" id="one" name="stops" value="one">
+                <p>Ratings</p>
+                <input type="radio" id="one" name="Rating" value="one">
                 <label for="one">1</label><br>
 
-                <input type="radio" id="two" name="stops" value="two">
+                <input type="radio" id="two" name="Rating" value="two">
                 <label for="two">2</label><br>
 
-                <input type="radio" id="three" name="stops" value="three">
-                <label for="three">3+</label><br>
+                <input type="radio" id="three" name="Rating" value="three">
+                <label for="three">3</label><br>
+
+                <input type="radio" id="four" name="Rating" value="four">
+                <label for="four">4</label><br>
+
+                <input type="radio" id="five" name="Rating" value="five">
+                <label for="five">5</label><br>
 
                 
             </td>
