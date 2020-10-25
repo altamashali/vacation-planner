@@ -44,13 +44,7 @@
     <div class = "selection-pane">
         <form>
             <label for="destination">Enter Destination:</label>
-            <input type="text" id="destination" size="20px" name="destination" value="Paris">
-            <label for="arrival">Arrival Date:</label>
-            <input type="text" id="datepicker" size="10px" name="arrival">
-            <label for="departure">Departure Date:</label>
-            <input type="text" id="calendar" size="10px" name="departure">
-            <label for="guests">Number of guests:</label>
-            <input type="text" id="guests" size="1px" name="guests">
+            <input type="text" id="destination" size="125px" name="destination" value="Paris">
             
             <div class="slidecontainer">
                 <label for="myRange" id="budget_slider_title"><i>What's your budget?</i>
@@ -68,33 +62,35 @@
         <tr>
             <td class = "pane-left selection-pane">
                 <h1>Filters:</h1>
-                <p>Interested in flying?</p>
-                <input type="radio" id="yes" name="option" value="yes">
-                <label for="yes">Yes</label><br>
-                <input type="radio" id="no" name="option" value="no">
-                <label for="no">No</label><br>
+                <p>Category</p>
+                <select name="category" id="category">
+                    <option value="mexican">Mexican</option>
+                    <option value="indian">Indian</option>
+                    <option value="italian">Italian</option>
+                    <option value="burgers">Burgers</option>
+                </select>
+                <br>
 
-                <p>Accomodation Type</p>
-                <input type="radio" id="house" name="accomodation" value="house">
-                <label for="house">House</label><br>
-                <input type="radio" id="hotel" name="accomodation" value="hotel">
-                <label for="hotel">Hotel</label><br>     
-                
-                <p>Transportation Type</p>
-                <input type="radio" id="car" name="transportation" value="car">
-                <label for="car">Car</label><br>
-                <input type="radio" id="bus" name="transportation" value="bus">
-                <label for="bus">Bus</label><br>  
-                <input type="radio" id="train" name="transportation" value="train">
-                <label for="train">Train</label><br>  
+                <p>Type of Stay</p>
+                <input type="radio" id="pickup" name="stay" value="pickup">
+                <label for="pickup">Pick-Up</label><br>
+                <input type="radio" id="drivethru" name="stay" value="drivethru">
+                <label for="drivethru">Drive-Thru</label><br>     
+                <input type="radio" id="delivery" name="stay" value="delivery">
+                <label for="delivery">Delivery</label><br>    
+                <input type="radio" id="dinein" name="stay" value="dinein">
+                <label for="dinein">Dine-In</label><br>    
 
-                <p>Interested in excursions?</p>
-                <input type="radio" id="yes-excursion" name="option-excursion" value="yes-excursion">
-                <label for="yes-excursion">Yes</label><br>
-                <input type="radio" id="no-excursion" name="option-excursion" value="no-excursion">
-                <label for="no-excursion">No</label><br>
-
-                
+                <p>Rating</p>
+                <select name="rating" id="rating">
+                    <option value="onestar">1 Star</option>
+                    <option value="twostar">2 Star</option>
+                    <option value="threestar">3 Star</option>
+                    <option value="fourstar">4 Star</option>
+                    <option value="fivestar">5 Star</option>
+                </select>
+                <br>
+        
             </td>
             <td class = "pane-right selection-pane">
                 <h1>Destination Description:</h1>                
