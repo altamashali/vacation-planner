@@ -1,0 +1,24 @@
+The previous meeting was 15 minutes long.
+
+
+During the last meeting we worked on:
+
+Getting started with assigning tasks
+Creating a blueprint for our website page
+
+
+Our accomplishments:
+
+Finished project proposal 
+everyone was able to get on vs code 
+
+
+Tasks completed:
+
+Fix burndown chart
+Complete references, find exact API urls to use
+Finish the project proposal (executive summary)
+Create GitHub repository
+Do research on APIs and finalize
+Have complete design of our interface
+Update burndown chart and backlog

@@ -1,0 +1,28 @@
+The previous meeting was 15 minutes long.
+
+
+During the last meeting we worked on:
+
+Discuss current state of project 
+Formally discuss Sprint 1 tasks which have been completed
+Confer on Sprint 1 tasks which can be pushed to backlog for Sprint 2
+Discuss any additional items to address before Sprint 2
+
+
+Our accomplishments:
+
+Finished creating all of our pages for our website
+Fixed minor bugs we had with the navigation bar
+
+
+Tasks completed:
+
+Create rental homes page
+Create a flight availability/package page
+Create a landing page
+Set up CSS to be used across the website
+Decide on page color palette
+Create a logo
+Create a team name
+Decide on a tech stack to use
+

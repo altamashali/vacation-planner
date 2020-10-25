@@ -1,0 +1,29 @@
+The previous meeting was 15 minutes long.
+
+
+During the last meeting we worked on:
+
+Keeping working on assigning tasks
+Keep working on the blueprint for our website page
+
+
+Our accomplishments:
+
+Finished our previous tasks from our last meeting 
+Fixed burndown chart
+Completed references, find exact API urls to use
+Create GitHub repository
+Do research on APIs and finalize
+Have complete design of our interface
+
+
+Tasks completed:
+
+create a search bar for the home page
+Develop user options for trip navigation
+Decide on additional pages for more specific results
+Create a Hotels page
+Create a restaurant page
+Create transportation page
+Create Airbnb page
+Add budget slider/define budget option
