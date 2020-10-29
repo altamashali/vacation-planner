@@ -139,5 +139,9 @@ input {
   width: 20%;
 }
 
+.text-pane-left {
+  width: 50%;
+}
+
 .pane-right {
 }
