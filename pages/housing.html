@@ -3,53 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
+    
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="../js/amadeus.js"></script>
+    <script src="../js/main.js"></script>
+    
     <title>Vacation Planner</title>
-    <script>
-        window.onload = function() {
-            document.getElementById("myRange").addEventListener('input', function() {
-                document.getElementById("budget").value = "$" + parseInt(document.getElementById("myRange").value).toLocaleString();
-            });
-
-            document.getElementById("budget").addEventListener('input', function() {
-                var str = document.getElementById("budget").value;
-                if(str.length > 0){
-                    document.getElementById("myRange").value = parseInt(document.getElementById("budget").value.replace("$", "").replace(",", "")).toLocaleString();
-                }
-            });
-        };
-    </script>
-    <script>
-        $( function() {
-          $( "#datepicker" ).datepicker();
-          $( "#calendar" ).datepicker();
-        } );
-    </script>
 </head>
 <body>
-    <h1 id="header"><img id="logo" src="images/logo.png" />Vacation Planner</h1>
+    <h1 id="header"><img id="logo" src="../images/logo.png" />Vacation Planner</h1>
     <div class="topnav">
-        <a href="index.html">Home</a>
-        <a href="#about">About Us</a>
+        <a href="../index.html">Home</a>
         <a href="flight.html">Flights</a>
         <a class="active" href="#housing">Housing</a>
         <a href="commuting.html">Commuting</a>
         <a href="attractions.html">Attractions</a>
         <a href="restaurants.html">Restaurants</a>
+        <a href="about.html">About Us</a>
       </div>
 
     <div class = "selection-pane">
         <form>
             <label for="location">Enter Location:</label>
-            <input type="text" id="location" size="20px" name="location" value="Paris">
+            <input type="text" id="location" size="45px" name="location" value="Paris">
             <label for="checkin">Check In:</label>
-            <input type="text" id="datepicker" size="10px" name="checkin">
+            <input type="text" id="from" size="20px" name="checkin">
 
             <label for="checkout">Check Out:</label>
-            <input type="text" id="calendar" size="10px" name="checkout">
+            <input type="text" id="to" size="20px" name="checkout">
             
             <div class="slidecontainer">
                 <label for="myRange" id="budget_slider_title"><i>What's your budget?</i>
@@ -59,6 +44,8 @@
                 <label id="budgetMin">$100</label>
                 <label id="budgetMax">$10k+</label>
             </div>
+            <button class="search-button" onclick="test()" type="button">Search</button>
+
         </form>
         
     </div>
@@ -75,24 +62,17 @@
                 <label for="Hotels">Hotels</label><br>
 
                 <p>Number of Guests</p>
-                <input type="text" id="Guests" name="Guests" value="2">   
+                <input type="text" id="Guests" size="1px" name="Guests" value="2">   
                 
-                <p>Ratings</p>
-                <input type="radio" id="one" name="Rating" value="one">
-                <label for="one">1</label><br>
-
-                <input type="radio" id="two" name="Rating" value="two">
-                <label for="two">2</label><br>
-
-                <input type="radio" id="three" name="Rating" value="three">
-                <label for="three">3</label><br>
-
-                <input type="radio" id="four" name="Rating" value="four">
-                <label for="four">4</label><br>
-
-                <input type="radio" id="five" name="Rating" value="five">
-                <label for="five">5</label><br>
-
+                <p>Rating</p>
+                <select name="houseRate" class="dropdown-menu" id="houseRate">
+                    <option value="onestar">1 Star</option>
+                    <option value="twostar">2 Star</option>
+                    <option value="threestar">3 Star</option>
+                    <option value="fourstar">4 Star</option>
+                    <option value="fivestar">5 Star</option>
+                </select>
+                <br>
                 
             </td>
             <td class = "pane-right selection-pane">

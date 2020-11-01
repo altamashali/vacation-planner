@@ -1,6 +1,6 @@
 @font-face  {
   font-family: DidactGothic;
-  src: url("./fonts/DidactGothic-Regular.ttf");
+  src: url("../fonts/DidactGothic-Regular.ttf");
   font-weight: 400;
 }
 /* Add a black background color to the top navigation */
@@ -75,10 +75,11 @@ input {
 }
 
 .slidecontainer {
-  width: 30%; /* Width of the outside container */
+  width: 20%; /* Width of the outside container */
   display: inline-block;
   vertical-align: middle;
   margin-left: 20px;
+  margin-right: 20px;
 }
 
 #budgetMax {
@@ -88,23 +89,26 @@ input {
 #budget {
   float: right;
   display: inline-block;
+  width: 50px;
+  margin: 0px;
 }
 
 /* Budget Slider */
 .slider {
   -webkit-appearance: none;  /* Override default CSS styles */
   appearance: none;
-  width: 100%; /* Full-width */
+  width: 96%; /* Full-width */
   height: 25px; /* Specified height */
   background: white; /* Grey background */
   outline: none; /* Remove outline */
   opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
   -webkit-transition: .2s; /* 0.2 seconds transition on hover */
   transition: opacity .2s;
+  margin-left: 0px;
+  margin-right: 0px;
 }
-
 #budget_slider_title{
-  font-size: 20px;
+  font-size: 18px;
 }
 /* Mouse-over effects */
 .slider:hover {
@@ -132,7 +136,6 @@ input {
   width: 100%;
   margin-top: 20px;
   border-spacing: 20px 0px;
-  margin-left: -20px;
 }
 
 .pane-left {
@@ -144,4 +147,25 @@ input {
 }
 
 .pane-right {
+}
+
+.search-button{
+  background-color: #f46A4E;
+  color: white;
+  text-align: center;
+  padding: 15px 30px;
+  border: 2px solid #5c4a72;
+  border-radius: 10px;
+  display: inline-block;
+  margin-top: 20px;
+  font-size: 18px;
+
+}
+.dropdown-menu{
+  background-color: #f3b05a;
+  color: #5c4a72;
+  font-size: 15px;
+  min-width: 100px;
+  padding: 12px 16px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
