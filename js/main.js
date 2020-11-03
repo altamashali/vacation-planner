@@ -16,7 +16,12 @@ window.onload = function() {
 
     var d = new Date();
     var x = document.getElementById("from");
-    x.value = d.toLocaleDateString(); // Fix formatting
+    var mm = d.getMonth() + 1;
+    var dd = d.getDate();
+    var yy = d.getFullYear();
+    dd = String(dd).padStart(2, '0');
+    mm = String(mm).padStart(2, '0');
+    x.value = yy + '-' + mm + '-' + dd;
 };
 
 function test(){
@@ -27,6 +32,16 @@ function flightSearch(){
     (async () => {
         var stops = -1
         var nonStop = document.getElementById("stops-one").checked;
+
+        var includedAirlines = null;
+        if(!document.getElementById("Any-Airline").checked){
+            includedAirlines = [];
+            for(var s of ["JetBlue", "Delta", "Southwest", "United"]){
+                if(document.getElementById(s).checked)
+                    includedAirlines.push(document.getElementById(s).value);
+            }
+        }
+
         if(nonStop){
             stops = 1;
         }
@@ -42,7 +57,7 @@ function flightSearch(){
 
         var departure = document.getElementById("initial").value;
         var arrival = document.getElementById("destination").value;
-        var response = await queryFlight(departure, arrival, departureDate, returnDate, 1, nonStop, "USD", getBudget(), 20);
+        var response = await queryFlight(departure, arrival, departureDate, returnDate, 1, nonStop, includedAirlines, "USD", getBudget(), 20);
         console.log(response);
 
         var displayStr = "";

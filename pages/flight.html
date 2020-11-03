@@ -18,6 +18,21 @@
             document.getElementById("One-way").checked = !roundTrip;
             document.getElementById("Round-Trip").checked = roundTrip;
         }
+
+        function updateAirlineBoxes(checked){
+            if(checked){
+                document.getElementById("JetBlue").checked = true;
+                document.getElementById("Delta").checked = true;
+                document.getElementById("Southwest").checked = true;
+                document.getElementById("United").checked = true;
+            }
+        }
+
+        function updateAnyAirlineBox(checked){
+            if(!checked){
+                document.getElementById("Any-Airline").checked = false;
+            }
+        }
     </script>
     
     <title>Vacation Planner</title>
@@ -37,13 +52,57 @@
     <div class = "selection-pane">
         <form>
             <label for="initial">Leaving From:</label>
-            <input type="text" id="initial" size="12px" name="initial" value="IAH">
+            <select name="inital" class="dropdown-menu" id="initial">
+                <option value="AMS">Amsterdam</option>
+                <option value="BKK">Bangkok</option>
+                <option value="BCN">Barcelona</option>
+                <option value="CAI">Cairo</option>
+                <option value="DXB">Dubai</option>
+                <option value="FLR">Florence</option>
+                <option value="FRA">Frankfurt</option>
+                <option value="IAH" selected="selected">Houston</option>
+                <option value="IST">Istanbul</option>
+                <option value="KIX">Kyoto</option>
+                <option value="LIS">Lisbon</option>
+                <option value="LAX">Los Angeles</option>
+                <option value="LON">London</option>
+                <option value="MEX">Mexico City</option>
+                <option value="JFK">New York City</option>
+                <option value="PAR">Paris</option>
+                <option value="RIO">Rio de Janeiro</option>
+                <option value="ROM">Rome</option>
+                <option value="SFO">San Francisco</option>
+                <option value="SYD">Sydney</option>
+                <option value="TYO">Tokyo</option>
+            </select>
             <label for="destination">Going To:</label>
-            <input type="text" id="destination" size="12px" name="destination" value="JFK">
+            <select name="destination" class="dropdown-menu" id="destination">
+                <option value="AMS">Amsterdam</option>
+                <option value="BKK">Bangkok</option>
+                <option value="BCN">Barcelona</option>
+                <option value="CAI">Cairo</option>
+                <option value="DXB">Dubai</option>
+                <option value="FLR">Florence</option>
+                <option value="FRA">Frankfurt</option>
+                <option value="IAH" selected="selected">Houston</option>
+                <option value="IST">Istanbul</option>
+                <option value="KIX">Kyoto</option>
+                <option value="LIS">Lisbon</option>
+                <option value="LAX">Los Angeles</option>
+                <option value="LON">London</option>
+                <option value="MEX">Mexico City</option>
+                <option value="JFK" selected>New York City</option>
+                <option value="PAR">Paris</option>
+                <option value="RIO">Rio de Janeiro</option>
+                <option value="ROM">Rome</option>
+                <option value="SFO">San Francisco</option>
+                <option value="SYD">Sydney</option>
+                <option value="TYO">Tokyo</option>
+            </select>
             <label for="departure">Departure Date:</label>
-            <input type="text" id="from" size="10px" name="departure">
+            <input type="text" id="from" size="8px" name="departure">
             <label for="return">Return Date (if applicable):</label>
-            <input type="text" id="to" size="10px" name="return" onchange="updateRoundTrip()">
+            <input type="text" id="to" size="8px" name="return" onchange="updateRoundTrip()">
             
             <div class="slidecontainer">
                 <label for="myRange" id="budget_slider_title"><i>What's your budget?</i>
@@ -63,14 +122,20 @@
             <td class = "pane-left selection-pane">
                 <h1>Filters:</h1>
                 <p>Airlines</p>
-                <input type="radio" id="American Airlines" name="airlines" value="American Airlines">
-                <label for="American Airlines">American Airlines</label><br>
+                <input type="checkbox" id="JetBlue" name="airlines" value="B6" onchange='updateAnyAirlineBox(this.checked)' checked>
+                <label for="JetBlue">JetBlue</label><br>
 
-                <input type="radio" id="Delta" name="airlines" value="Delta">
+                <input type="checkbox" id="Delta" name="airlines" value="DL" onchange='updateAnyAirlineBox(this.checked)' checked>
                 <label for="Delta">Delta</label><br>
 
-                <input type="radio" id="Southwest" name="airlines" value="Southwest">
+                <input type="checkbox" id="Southwest" name="airlines" value="WN" onchange='updateAnyAirlineBox(this.checked)' checked>
                 <label for="Southwest">Southwest</label><br>
+
+                <input type="checkbox" id="United" name="airlines" value="UA" onchange='updateAnyAirlineBox(this.checked)' checked>
+                <label for="United">United</label><br>
+
+                <input type="checkbox" id="Any-Airline" name="airlines" value="Any" onchange='updateAirlineBoxes(this.checked)' checked>
+                <label for="Any-Airline">Any</label><br>
 
                 <p>Flight Type</p>
                 <input type="radio" id="One-way" name="type" value="One-way" onchange='document.getElementById("to").value = ""' checked>

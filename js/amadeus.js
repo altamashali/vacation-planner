@@ -42,7 +42,7 @@ async function getToken(){
     return amadeusToken;
 }
 
-async function queryFlight(originLocationCode, destinationLocationCode, departureDate, returnDate, adults, nonStop, currencyCode, maxPrice, maxOffers, callback){
+async function queryFlight(originLocationCode, destinationLocationCode, departureDate, returnDate, adults, nonStop, includedAirlines, currencyCode, maxPrice, maxOffers, callback){
     
     var token = await getToken();
 
@@ -61,6 +61,9 @@ async function queryFlight(originLocationCode, destinationLocationCode, departur
     }
     if(returnDate)
         url += "&returnDate=" + returnDate;
+    if(includedAirlines){
+        url += "&includedAirlineCodes=" + includedAirlines.join(',');
+    }
 
     return fetch(url, {
         headers: {

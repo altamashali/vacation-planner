@@ -165,7 +165,8 @@ input {
   background-color: #f3b05a;
   color: #5c4a72;
   font-size: 15px;
-  min-width: 100px;
+  width: 150px;
+  margin: 1px;
   padding: 12px 16px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
