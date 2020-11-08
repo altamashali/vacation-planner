@@ -1,0 +1,29 @@
+The previous meeting was 15 minutes long.
+
+
+During the last meeting we worked on:
+
+Connect the backend
+Add javascript files for the backend
+Make UI improvements
+Organized directories for our project
+
+
+Our accomplishments:
+
+Decide on button color for most visibility
+Develop button to export data collected
+Decide on styling standard or techniques
+Set up VS Code Live Share (code collaboration tool)
+Decide on specific data to collect from each API
+
+
+Tasks completed:
+
+Decide on button color for most visibility
+Develop button to export data collected
+Decide on styling standard or techniques
+Set up VS Code Live Share (code collaboration tool)
+Decide on specific data to collect for restaurants from each API
+Decide on specific data to collect for hotels from each API
+Decide on specific data to collect from rental homes API

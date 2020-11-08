@@ -1,0 +1,34 @@
+The previous meeting was 13 minutes long.
+
+
+During the last meeting we worked on:
+
+Discuss current state of project
+Formally discuss Sprint 2 tasks which have been completed
+Confer on Sprint 3 tasks which can be pushed to backlog for Sprint 3
+Discuss any additional items to address before Sprint 3
+
+
+Our accomplishments:
+
+Set up Amadeus API for flights
+Added menu options for destinations
+Got flight results from Amadeus API
+Develop user study
+
+
+Tasks completed:
+
+Add number of guest option on the restaurant's page
+Change excursion option to attractions
+Add arrows on the textbox for number of guests
+Remove rental homes from housing page
+Add color blind option on website
+Successfully retrieve name data for commuting
+Successfully retrieve name data for attractions
+Develop column structure for About Us page
+Develop text explaining how to use website
+Write accessibility statement to About Us page
+
+
+

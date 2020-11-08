@@ -1,0 +1,29 @@
+The previous meeting was 13 minutes long.
+
+
+During the last meeting we worked on:
+
+Keeping working on assigning tasks
+Set up Amadeus API for flights
+Added menu options for destinations
+Got flight results from Amadeus API
+Develop user study
+
+
+Our accomplishments:
+
+Connect the backend
+Add javascript files for the backend
+Make UI improvements
+Organized directories for our project
+
+
+Tasks completed:
+
+Set up APIs
+Functionality of the APIs
+Successfully get names for hotels from APIs
+Successfully get names for flight packages from APIs
+Successfully get names for rental homes from APIs
+
+
