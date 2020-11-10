@@ -43,9 +43,10 @@
         <a href="../index.html">Home</a>
         <a class="active" href="#flights">Flights</a>
         <a href="housing.html">Housing</a>
-        <a href="commuting.html">Commuting</a>
+<!--         <a href="commuting.html">Commuting</a>
         <a href="attractions.html">Attractions</a>
-        <a href="restaurants.html">Restaurants</a>
+        <a href="restaurants.html">Restaurants</a> -->
+        <a href="poi.html">Point of Interest</a>
         <a href="about.html">About Us</a>
       </div>
 
@@ -108,9 +109,9 @@
                 <label for="myRange" id="budget_slider_title"><i>What's your budget?</i>
                     <input type="text" min="100" max="10000" value="$1,000" id="budget">
                 </label>
-                <input type="range" min="100" max="10000" value="1000" class="slider" id="myRange">
-                <label id="budgetMin">$100</label>
-                <label id="budgetMax">$10k+</label>
+                <input type="range" min="0" max="5000" value="1000" class="slider" id="myRange">
+                <label id="budgetMin">$0</label>
+                <label id="budgetMax">$5000</label>
             </div>
             <button class="search-button" onclick="flightSearch()" type="button">Search</button>
         </form>

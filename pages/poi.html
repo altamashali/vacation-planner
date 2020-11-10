@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
+    
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="../js/amadeus.js"></script>
+    <script src="../js/main.js"></script>
+    
+    <title>Vacation Planner</title>
+</head>
+<body>
+    <h1 id="header"><img id="logo" src="../images/logo.png" />Vacation Planner</h1>
+    <div class="topnav">
+        <a href="../index.html">Home</a>
+        <a href="flight.html">Flights</a>
+        <a href="housing.html">Housing</a>
+<!--         <a href="commuting.html">Commuting</a>
+        <a href="attractions.html">Attractions</a>
+        <a class="active" href="#restaurants">Restaurants</a> -->
+        <a class="active" href="#poi">Point of Interest</a>
+        <a href="about.html">About Us</a>
+      </div>
+
+    <table class="details-table">
+        <tr>
+            <td class = "pane-left selection-pane">
+                <h1>Filters:</h1>
+
+                <p>Destination</p>
+                <select name="inital" class="dropdown-menu" id="initial" style="width:200px;">
+                    <option value="AMS">Amsterdam</option>
+                    <option value="BKK">Bangkok</option>
+                    <option value="BCN">Barcelona</option>
+                    <option value="CAI">Cairo</option>
+                    <option value="DXB">Dubai</option>
+                    <option value="FLR">Florence</option>
+                    <option value="FRA">Frankfurt</option>
+                    <option value="IAH" selected="selected">Houston</option>
+                    <option value="IST">Istanbul</option>
+                    <option value="KIX">Kyoto</option>
+                    <option value="LIS">Lisbon</option>
+                    <option value="LAX">Los Angeles</option>
+                    <option value="LON">London</option>
+                    <option value="MEX">Mexico City</option>
+                    <option value="JFK">New York City</option>
+                    <option value="PAR">Paris</option>
+                    <option value="RIO">Rio de Janeiro</option>
+                    <option value="ROM">Rome</option>
+                    <option value="SFO">San Francisco</option>
+                    <option value="SYD">Sydney</option>
+                    <option value="TYO">Tokyo</option>
+                 </select>
+
+                <p>Restaurants</p>
+                <select name="category" class="dropdown-menu" style="width:200px;" id="category">
+                    <option value="mexican">Mexican</option>
+                    <option value="indian">Indian</option>
+                    <option value="italian">Italian</option>
+                    <option value="american">American</option>
+                    <option value="chinese">Chinese</option>
+                </select>
+                <br>
+
+                <p>Attractions</p>
+                <select name="category" class="dropdown-menu" style="width:200px;" id="category">
+                    <option value="amusement_parks">Amusement parks</option>
+                    <option value="beaches">Beaches</option>
+                    <option value="casino">Casino</option>
+                    <option value="park">Park</option>
+                    <option value="shows_theaters_music">Shows, theaters, music</option>     
+                </select>
+                <br>
+
+                <p>Transportation</p>
+                <select name="category" class="dropdown-menu" style="width:200px;" id="category">
+                    <option value="car_rental">Car rental</option>
+                    <option value="taxi_station">Taxi station</option>
+                    <option value="railway_station">Railway station</option>
+                    <option value="bus_station">Bus station</option>
+                </select>
+                <br>
+                
+                <button class="search-button" onclick="test()" type="button">Search</button>
+
+            </td>
+            <td class = "pane-right selection-pane">              
+                <h1>Our Matches:</h1>
+            </td>
+        </tr>
+    </table>
+
+
+
+</body>
+</html>

@@ -20,16 +20,17 @@
         <a href="../index.html">Home</a>
         <a href="flight.html">Flights</a>
         <a class="active" href="#housing">Housing</a>
-        <a href="commuting.html">Commuting</a>
+<!--         <a href="commuting.html">Commuting</a>
         <a href="attractions.html">Attractions</a>
-        <a href="restaurants.html">Restaurants</a>
+        <a href="restaurants.html">Restaurants</a> -->
+        <a href="poi.html">Point of Interest</a>
         <a href="about.html">About Us</a>
       </div>
 
     <div class = "selection-pane">
         <form>
             <label for="location">Enter Location:</label>
-            <select name="location" class="dropdown-menu" id="location">
+            <select name="location" class="dropdown-menu" id="location" style="width:200px;">
                 <option value="AMS">Amsterdam</option>
                 <option value="BKK">Bangkok</option>
                 <option value="BCN">Barcelona</option>
@@ -54,18 +55,18 @@
             </select>
             <!-- <input type="text" id="location" size="45px" name="location" value="Paris"> -->
             <label for="checkin">Check In:</label>
-            <input type="text" id="from" size="20px" name="checkin">
+            <input type="text" id="from" size="30px" name="checkin">
 
             <label for="checkout">Check Out:</label>
-            <input type="text" id="to" size="20px" name="checkout">
+            <input type="text" id="to" size="30px" name="checkout">
             
             <div class="slidecontainer">
                 <label for="myRange" id="budget_slider_title"><i>What's your budget?</i>
                     <input type="text" min="100" max="10000" value="$1,000" id="budget">
                 </label>
-                <input type="range" min="100" max="10000" value="1000" class="slider" id="myRange">
-                <label id="budgetMin">$100</label>
-                <label id="budgetMax">$10k+</label>
+                <input type="range" min="0" max="1000" value="1000" class="slider" id="myRange">
+                <label id="budgetMin">$0</label>
+                <label id="budgetMax">$1000</label>
             </div>
             <button class="search-button" onclick="hotelSearch()" type="button">Search</button>
 
