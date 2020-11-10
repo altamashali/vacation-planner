@@ -27,10 +27,63 @@ window.onload = function() {
 function test(){
 }
 
+function hotelSearch(){
+    document.getElementById("matches").innerHTML = "Looking for matching hotels...";
+    (async () => {
+
+        var checkIn = document.getElementById("from").value;
+        var checkOut = document.getElementById("to").value;
+        if(checkOut.length == 0)
+        checkOut = null;
+
+        var guests = document.getElementById("Guests").value;
+
+        var stars = [];
+        for(var s of ["five", "four", "three", "two", "one"]){
+            if(document.getElementById(s+"star").checked)
+                stars.push(document.getElementById(s+"star").value);
+        }
+
+        var location = document.getElementById("location").value;
+        var response = await queryHotel(location, checkIn, checkOut, guests, document.getElementById("rooms").value, stars, document.getElementById("radius").value, "MILES", "USD", 0, getBudget());
+        console.log(response);
+
+        var displayStr = "";
+        var i = 0;
+
+        if(response.data.length == 0){
+            document.getElementById("matches").innerHTML = "No matches found.";
+            return;
+        }
+
+        for(var hotel of response.data) {
+            if(hotel.offers.length == 0)
+                continue;
+
+            var hName = hotel.hotel.name;
+            
+            var offer = hotel.offers[0];
+            
+            var price = offer.price.base;
+            if(offer.price.total)
+                price = offer.price.total;
+            
+            displayStr += "<p>" + `<b>Option ${i} --- ${hName}</b> --- Price: ${price}, rating: ${hotel.hotel.rating}.`;
+            if(hotel.hotel.description)
+                displayStr += `<br><br>Hotel description: ${hotel.hotel.description.text}`;
+            displayStr += `<br><br>Room type: ${offer.room.typeEstimated.category}, beds: ${offer.room.typeEstimated.beds}, ${offer.room.typeEstimated.bedType}. Description: ${offer.room.description.text}.</p><br>`
+
+            i++;
+        }
+
+        document.getElementById("matches").innerHTML = displayStr;
+    })()
+}
+
 function flightSearch(){
     document.getElementById("matches").innerHTML = "Looking for matching flights...";
     (async () => {
-        var stops = -1
+        var stops = -1;
         var nonStop = document.getElementById("stops-one").checked;
 
         var includedAirlines = null;

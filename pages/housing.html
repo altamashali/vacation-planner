@@ -29,7 +29,30 @@
     <div class = "selection-pane">
         <form>
             <label for="location">Enter Location:</label>
-            <input type="text" id="location" size="45px" name="location" value="Paris">
+            <select name="location" class="dropdown-menu" id="location">
+                <option value="AMS">Amsterdam</option>
+                <option value="BKK">Bangkok</option>
+                <option value="BCN">Barcelona</option>
+                <option value="CAI">Cairo</option>
+                <option value="DXB">Dubai</option>
+                <option value="FLR">Florence</option>
+                <option value="FRA">Frankfurt</option>
+                <option value="IAH" selected="selected">Houston</option>
+                <option value="IST">Istanbul</option>
+                <option value="KIX">Kyoto</option>
+                <option value="LIS">Lisbon</option>
+                <option value="LAX">Los Angeles</option>
+                <option value="LON">London</option>
+                <option value="MEX">Mexico City</option>
+                <option value="JFK" selected>New York City</option>
+                <option value="PAR">Paris</option>
+                <option value="RIO">Rio de Janeiro</option>
+                <option value="ROM">Rome</option>
+                <option value="SFO">San Francisco</option>
+                <option value="SYD">Sydney</option>
+                <option value="TYO">Tokyo</option>
+            </select>
+            <!-- <input type="text" id="location" size="45px" name="location" value="Paris"> -->
             <label for="checkin">Check In:</label>
             <input type="text" id="from" size="20px" name="checkin">
 
@@ -44,7 +67,7 @@
                 <label id="budgetMin">$100</label>
                 <label id="budgetMax">$10k+</label>
             </div>
-            <button class="search-button" onclick="test()" type="button">Search</button>
+            <button class="search-button" onclick="hotelSearch()" type="button">Search</button>
 
         </form>
         
@@ -54,30 +77,46 @@
         <tr>
             <td class = "pane-left selection-pane">
                 <h1>Filters:</h1>
-                <p>Types of Housing</p>
-                <input type="radio" id="Airbnb" name="housing" value="Airbnb">
-                <label for="Airbnb">Airbnb</label><br>
-
-                <input type="radio" id="Hotels" name="housing" value="Hotels">
-                <label for="Hotels">Hotels</label><br>
-
+                
                 <p>Number of Guests</p>
                 <input type="text" id="Guests" size="1px" name="Guests" value="2">   
+
+                <p>Number of Rooms</p>
+                <input type="text" id="rooms" size="1px" name="rooms" value="1">   
+
+                <p>Max distance from location (miles)</p>
+                <input type="text" id="radius" size="1px" name="radius" value="50">   
                 
                 <p>Rating</p>
-                <select name="houseRate" class="dropdown-menu" id="houseRate">
+                <input type="checkbox" id="onestar" name="houseRate" value="1" checked>
+                <label for="onestar">1 Star</label><br>
+
+                <input type="checkbox" id="twostar" name="houseRate" value="2" checked>
+                <label for="twostar">2 Star</label><br>
+
+                <input type="checkbox" id="threestar" name="houseRate" value="3" checked>
+                <label for="threestar">3 Star</label><br>
+
+                <input type="checkbox" id="fourstar" name="houseRate" value="4" checked>
+                <label for="fourstar">4 Star</label><br>
+
+                <input type="checkbox" id="fivestar" name="houseRate" value="5" checked>
+                <label for="fivestar">5 Star</label><br>
+
+                <!-- <select name="houseRate" class="dropdown-menu" id="houseRate">
                     <option value="onestar">1 Star</option>
                     <option value="twostar">2 Star</option>
                     <option value="threestar">3 Star</option>
                     <option value="fourstar">4 Star</option>
                     <option value="fivestar">5 Star</option>
-                </select>
+                </select> -->
                 <br>
                 
             </td>
             <td class = "pane-right selection-pane">
                 <h1>Destination Description:</h1>                
                 <h1>Our Matches:</h1>
+                <div id="matches"></div>
             </td>
         </tr>
     </table>
