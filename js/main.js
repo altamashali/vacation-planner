@@ -3,28 +3,63 @@ function getBudget(){
 }
 
 window.onload = function() {
-    document.getElementById("myRange").addEventListener('input', function() {
-        document.getElementById("budget").value = "$" + getBudget().toLocaleString();
-    });
+    if(document.getElementById("myRange")){
+        document.getElementById("myRange").addEventListener('input', function() {
+            document.getElementById("budget").value = "$" + getBudget().toLocaleString();
+        });
 
-    document.getElementById("budget").addEventListener('input', function() {
-        var str = document.getElementById("budget").value;
-        if(str.length > 0){
-            document.getElementById("myRange").value = parseInt(document.getElementById("budget").value.replace("$", "").replace(",", "")).toLocaleString();
-        }
-    });
+        document.getElementById("budget").addEventListener('input', function() {
+            var str = document.getElementById("budget").value;
+            if(str.length > 0){
+                document.getElementById("myRange").value = parseInt(document.getElementById("budget").value.replace("$", "").replace(",", "")).toLocaleString();
+            }
+        });
+    }
 
-    var d = new Date();
     var x = document.getElementById("from");
-    var mm = d.getMonth() + 1;
-    var dd = d.getDate();
-    var yy = d.getFullYear();
-    dd = String(dd).padStart(2, '0');
-    mm = String(mm).padStart(2, '0');
-    x.value = yy + '-' + mm + '-' + dd;
+    if(x){
+        var d = new Date();
+        var mm = d.getMonth() + 1;
+        var dd = d.getDate();
+        var yy = d.getFullYear();
+        dd = String(dd).padStart(2, '0');
+        mm = String(mm).padStart(2, '0');
+        x.value = yy + '-' + mm + '-' + dd;
+    }
 };
 
 function test(){
+}
+
+function poiSearch(){
+    document.getElementById("matches").innerHTML = "Looking for matching attractions...";
+
+    (async () => {
+
+        var sel = document.getElementById("initial");
+        var location = sel.options[sel.selectedIndex].text;
+        console.log(location);
+
+        var tags = ["cuisine-Beer", "cuisine-Pizza"];
+
+        var response = await queryPOI(location, tags, 10, "-score", ["name,best_for,coordinates,score,id"]);
+        console.log(response);
+
+        var displayStr = "";
+        var i = 0;
+
+        if(response.results.length == 0){
+            document.getElementById("matches").innerHTML = "No matches found.";
+            return;
+        }
+
+        for(var poi of response.results) {
+            displayStr += "<p>" + `<b>${poi.name}</b></p>`
+            i++;
+        }
+
+        document.getElementById("matches").innerHTML = displayStr;
+    })()
 }
 
 function hotelSearch(){

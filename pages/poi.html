@@ -9,6 +9,7 @@
     
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="../js/triposo.js"></script>
     <script src="../js/amadeus.js"></script>
     <script src="../js/main.js"></script>
     
@@ -86,11 +87,12 @@
                 </select>
                 <br>
                 
-                <button class="search-button" onclick="test()" type="button">Search</button>
+                <button class="search-button" onclick="poiSearch()" type="button">Search</button>
 
             </td>
             <td class = "pane-right selection-pane">              
                 <h1>Our Matches:</h1>
+                <div id="matches"></div>
             </td>
         </tr>
     </table>
