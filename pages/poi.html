@@ -59,31 +59,37 @@
                  </select>
 
                 <p>Restaurants</p>
-                <select name="category" class="dropdown-menu" style="width:200px;" id="category">
-                    <option value="mexican">Mexican</option>
-                    <option value="indian">Indian</option>
-                    <option value="italian">Italian</option>
-                    <option value="american">American</option>
-                    <option value="chinese">Chinese</option>
+                <select name="category" class="dropdown-menu" style="width:200px;" id="category-restaurant" 
+                    onchange="if(this.value != '') {document.getElementById('category-attraction').value='';document.getElementById('category-transportation').value=''}">
+                    <option value="cuisine-Mexican">Mexican</option>
+                    <option value="cuisine-Indian">Indian</option>
+                    <option value="cuisine-Italian">Italian</option>
+                    <option value="cuisine-American">American</option>
+                    <option value="cuisine-Chinese">Chinese</option>
+                    <option value="">None</option>
                 </select>
                 <br>
 
                 <p>Attractions</p>
-                <select name="category" class="dropdown-menu" style="width:200px;" id="category">
-                    <option value="amusement_parks">Amusement parks</option>
+                <select name="category" class="dropdown-menu" style="width:200px;" id="category-attraction"
+                    onchange="if(this.value != '') {document.getElementById('category-restaurant').value='';document.getElementById('category-transportation').value=''}">
+                    <option value="amusementparks">Amusement parks</option>
                     <option value="beaches">Beaches</option>
-                    <option value="casino">Casino</option>
-                    <option value="park">Park</option>
-                    <option value="shows_theaters_music">Shows, theaters, music</option>     
+                    <option value="gambling">Casino</option>
+                    <option value="relaxinapark">Park</option>
+                    <option value="showstheatresandmusic">Shows, theaters, music</option>     
+                    <option value="" selected="selected">None</option>
                 </select>
                 <br>
 
                 <p>Transportation</p>
-                <select name="category" class="dropdown-menu" style="width:200px;" id="category">
-                    <option value="car_rental">Car rental</option>
-                    <option value="taxi_station">Taxi station</option>
-                    <option value="railway_station">Railway station</option>
-                    <option value="bus_station">Bus station</option>
+                <select name="category" class="dropdown-menu" style="width:200px;" id="category-transportation"
+                    onchange="if(this.value != '') {document.getElementById('category-attraction').value='';document.getElementById('category-restaurant').value=''}">
+                    <option value="poitype-Car_rental">Car rental</option>
+                    <option value="poitype-Taxi_station">Taxi station</option>
+                    <option value="poitype-Railway_station">Railway station</option>
+                    <option value="poitype-Bus_station">Bus station</option>
+                    <option value="" selected="selected">None</option>
                 </select>
                 <br>
                 

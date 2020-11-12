@@ -38,9 +38,24 @@ function poiSearch(){
 
         var sel = document.getElementById("initial");
         var location = sel.options[sel.selectedIndex].text;
-        console.log(location);
 
-        var tags = ["cuisine-Beer", "cuisine-Pizza"];
+        var tags = [];
+        
+        if(document.getElementById("category-restaurant").value != "")
+            tags.push(document.getElementById("category-restaurant").value);
+
+        if(document.getElementById("category-attraction").value != "")
+            tags.push(document.getElementById("category-attraction").value);
+
+        if(document.getElementById("category-transportation").value != "")
+            tags.push(document.getElementById("category-transportation").value);
+
+        console.log(tags);
+
+        if(tags.length == 0){
+            document.getElementById("matches").innerHTML = "No criteria selected.";
+            return;
+        }
 
         var response = await queryPOI(location, tags, 10, "-score", ["name,best_for,coordinates,score,id"]);
         console.log(response);
