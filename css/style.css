@@ -178,3 +178,20 @@ input {
 .column {
   flex: 50%;
 }
+
+div.container1 {
+  align-self:center;
+  margin: auto;
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+
+div.container2 {
+  padding: 25px;
+  text-align: left;
+}
+
+html {
+  scroll-behavior: smooth;
+}

@@ -18,77 +18,64 @@
     <h1 id="header"><img id="logo" src="./images/logo.png" />Vacation Planner</h1>
     <div class="topnav">
         <a class="active" href="#home">Home</a>
-        <a href="./pages/flight.html">Flights</a>
-        <a href="./pages/housing.html">Housing</a>
-<!--         <a href="./pages/commuting.html">Commuting</a>
+        <a href="./pages/flight.html">Step 1: Flights</a>
+        <a href="./pages/housing.html">Step 2: Housing</a>
+        <a href="./pages/poi.html">Step 3: Point of Interest</a>
+        <a href="./pages/about.html">About Us</a>
+        <!--         <a href="./pages/commuting.html">Commuting</a>
         <a href="./pages/attractions.html">Attractions</a>
         <a href="./pages/restaurants.html">Restaurants</a> -->
-        <a href="./pages/poi.html">Point of Interest</a>
-        <a href="./pages/about.html">About Us</a>
+
       </div>
 
     <div class = "selection-pane">
-        <form>
-            <label for="destination">Enter Destination:</label>
-            <input type="text" id="destination" size="12px" name="destination" value="Paris">
-            <label for="departure">Departure Date:</label>
-            <input type="text" id="from" size="10px" name="departure">
-            <label for="Return">Return Date (if applicable):</label>
-            <input type="text" id="to" size="10px" name="arrival">
-            <label for="guests">Number of guests:</label>
-            <input type="text" id="guests" size="1px" name="guests">
-            
-            <div class="slidecontainer">
-                <label for="myRange" id="budget_slider_title"><i>What's your budget?</i>
-                    <input type="text" min="100" max="10000" value="$1,000" id="budget">
-                </label>
-                <input type="range" min="100" max="10000" value="1000" class="slider" id="myRange">
-                <label id="budgetMin">$100</label>
-                <label id="budgetMax">$10k+</label>
-            </div>
-            <button class="search-button" onclick="test()" type="button">Search</button>
-
-        </form>
-        
+        <h1 style="text-align: center;">Welcome to Vacation Planner!</h1>  
+        <p style="margin-left: 100px; margin-right: 100px; font-size: 20px;" >
+            Today, when planning a vacation, there are numerous things to consider. Hotel packages,
+            flight times, restaurant suggestions and potential attractions are all scattered among the web on
+            sites such as Triposo, Amadeus, and MediaWiki. What our teams wants to allow for is
+            an easier method of vacation planning, by combining APIs from different travel agencies.
+        </p>
+        <p style="margin-left: 100px; margin-right: 100px; font-size: 20px;">
+            This will help individuals plan their first vacation if he or she is new to trip planning, as well as
+            allow for experienced individuals to find the options their destination has to offer in a more
+            efficient manner. Because costs are a big factor in which destinations a vacation-goer chooses
+            to travel to, our vacation planner will be able to find the most suitable and cost-effective vacation
+            based on the traveller’s budget preferences.
+        </p>
+        <p style="margin-left: 100px; margin-right: 100px; font-size: 20px;">
+            Although the Internet has made it possible for the average person to conveniently plan a trip, it
+            has also made it much more complicated due to the abundance of choice it provides. The sheer
+            number of flights and hotel options available today leave people wondering where to even begin
+            searching. The goal of our application is to simplify the process of planning a trip so that a
+            person with any level of computer skill is able to successfully plan a trip for themselves and
+            others in a quick, easy, and cost-effective manner.
+        </p>
+        <h3 style="text-align: center;"><i>Planning your vacation is now as easy as 1-2-3!</i></h3>
+        <a class="search-button" href="#how-to-use-2" style="width: 100px; text-decoration: none; margin-bottom: 30px; display: block; margin-left: auto; margin-right: auto;">Get Started</a>
+         <!--   <img src="./images/logo-alternate.png" style="width:300px; display: block; margin-top: 20px; margin-bottom: 20px; margin-left: auto; margin-right: auto;"> -->
     </div>
 
-    <table class="details-table">
-        <tr>
-            <td class = "pane-left selection-pane">
-                <h1>Filters:</h1>
-                <p>Interested in flying?</p>
-                <input type="radio" id="yes" name="option" value="yes">
-                <label for="yes">Yes</label><br>
-                <input type="radio" id="no" name="option" value="no">
-                <label for="no">No</label><br>
+    <p id="how-to-use-2" style="line-height: 10px;"></p>
 
-                <p>Accomodation Type</p>
-                <input type="radio" id="house" name="accomodation" value="house">
-                <label for="house">House</label><br>
-                <input type="radio" id="hotel" name="accomodation" value="hotel">
-                <label for="hotel">Hotel</label><br>     
-                
-                <p>Transportation Type</p>
-                <input type="radio" id="car" name="transportation" value="car">
-                <label for="car">Car</label><br>
-                <input type="radio" id="bus" name="transportation" value="bus">
-                <label for="bus">Bus</label><br>  
-                <input type="radio" id="train" name="transportation" value="train">
-                <label for="train">Train</label><br>  
+    <div class = "selection-pane" id="how-to-use">     
+        <h1 style="margin-left: 100px; margin-right: 100px; text-align: center;">How to Use</h1> 
+        <h2 style="margin-left: 100px; margin-right: 100px; text-align: center;">Step 1: Pick your flight.</h2>              
+            <p style="margin-left: 300px; margin-right: 300px; font-size: 20px; text-align: center;">Go to the Flights tab and choose from the options on that page. On the Flights page, you can choose which city you're 
+            leaving from and where you're going to. You can choose a departure and return date as well as picking a budget for your flight.
+            The filter options inlcude different airlines, flight type, and number of stops.</p>
+        <h2 style="margin-left: 100px; margin-right: 100px; text-align: center;">Step 2: Pick your housing.</h2>              
+            <p style="margin-left: 300px; margin-right: 300px; font-size: 20px; text-align: center;">Go to the Housing tab and choose from the options on that page. On the Housing page, you can enter the city are visiting, the check in/out dates, and 
+                pick a budget. The filter options include number of guests, number of rooms, max distance from your current location, and the ratings of the hotels.</p>
+        <h2 style="margin-left: 100px; margin-right: 100px; text-align: center;">Step 3: Pick your points of interest.</h2>              
+            <p style="margin-left: 300px; margin-right: 300px; font-size: 20px; text-align: center;">Go to the Point of Interest tab and choose from the options on that page. The filter options include
+                picking a destination, restaurant, attraction, and transportation.
+            </p>
+            <img src="./images/logo-alternate.png" style="width:300px; display: block; margin-top: 20px; margin-bottom: 20px; margin-left: auto; margin-right: auto;">
 
-                <p>Interested in excursions?</p>
-                <input type="radio" id="yes-excursion" name="option-excursion" value="yes-excursion">
-                <label for="yes-excursion">Yes</label><br>
-                <input type="radio" id="no-excursion" name="option-excursion" value="no-excursion">
-                <label for="no-excursion">No</label><br>
-                
-            </td>
-            <td class = "pane-right selection-pane">
-                <h1>Destination Description:</h1>                
-                <h1>Our Matches:</h1>
-            </td>
-        </tr>
-    </table>
+    </div>   
+    
+
 
 
 
