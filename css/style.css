@@ -6,15 +6,21 @@
 /* Add a black background color to the top navigation */
 body{
   font-family: DidactGothic;
-  background-color: #f3b05a;
+/*   background-color: #f3b05a;
+ */  background-image: url("../images/background-wallpaper.jpg");
+
 }
 .topnav {
-  background-color: #a3586d;
-  overflow: hidden;
+/*   background-color: #a3586d;
+ */  overflow: hidden;
+ background: rgba(163,88,109, 0.5); ;
   border-radius: 10px;
-  border-style: solid;
-  border-width: 2px;
-  border-color: #5c4a72;
+  margin: 10px;
+/*   box-shadow: 0px 0px 10px 5px #a3586d;
+ */  
+ border-style: solid;
+  border-width: 1px;
+  border-color: #5c4a72; 
 }
 
 /* Style the links inside the navigation bar */
@@ -30,6 +36,7 @@ body{
 /* Change the color of links on hover */
 .topnav a:hover {
   background-color: #ddd;
+  opacity: 0.9;
   color: black;
 }
 
@@ -55,15 +62,24 @@ body{
 
 .selection-pane{
   padding: 20px;
-  border-style: solid;
-  border-radius: 10px;
+  margin: 10px;
+  margin-bottom: 30px;
+
+  /* border-style: solid;
   border-color: #5c4a72;
-  border-width: 2px;
+  border-width: 2px; */
+  border-radius: 10px;
+  
+  
   color: white;
+  background: rgba(163,88,109, 0.4); ;
 
-
-  background-color: #a3586d;
-  margin-top: 20px;
+/*   background-color: #f3b05a;
+ */
+/*   background-color: #a3586d;
+ */  
+/*  box-shadow: 0px 0px 10px 5px #a3586d;p
+ */  margin-top: 20px;
   vertical-align: top;
 }
 
