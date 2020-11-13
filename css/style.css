@@ -7,7 +7,11 @@
 body{
   font-family: DidactGothic;
 /*   background-color: #f3b05a;
- */  background-image: url("../images/background-wallpaper.jpg");
+ */  background-image: url("../images/Awesome-Sunset-Wallpaper.jpg");
+     background-position: center;
+     background-repeat: no-repeat;
+     background-size: cover;
+   
 
 }
 .topnav {
