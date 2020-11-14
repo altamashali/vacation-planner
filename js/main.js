@@ -30,7 +30,15 @@ window.onload = function() {
 
 function test(){
 }
+function wikiSearch(){
+    document.getElementById("matches").innerHTML = "Looking for destination description...";
 
+    (async () => {
+        
+        console.log(document.getElementById("destination").value); 
+        
+    })()
+}
 function poiSearch(){
     document.getElementById("matches").innerHTML = "Looking for matching attractions...";
 
@@ -57,7 +65,7 @@ function poiSearch(){
             return;
         }
 
-        var response = await queryPOI(location, tags, 10, "-score", ["name,best_for,coordinates,score,id"]);
+        var response = await queryPOI(location, tags, 10, "-score", ["name,intro,snippet,score"]);
         console.log(response);
 
         var displayStr = "";
@@ -69,7 +77,7 @@ function poiSearch(){
         }
 
         for(var poi of response.results) {
-            displayStr += "<p>" + `<b>${poi.name}</b></p>`
+            displayStr += "<p>" + `<h3>${poi.name}: <span style='font-size:16px;font-weight:normal'>${poi.snippet}</span></h3><br><br>${poi.intro}</p>`
             i++;
         }
 
@@ -117,11 +125,25 @@ function hotelSearch(){
             var price = offer.price.base;
             if(offer.price.total)
                 price = offer.price.total;
+
+            var rating = parseInt(hotel.hotel.rating);
+            var ratingStr = "";
+            for(var i = 0; i < 5; i++){
+                ratingStr += (i < rating ? "★" : "☆");
+            }
             
-            displayStr += "<p>" + `<b>Option ${i} --- ${hName}</b> --- Price: ${price}, rating: ${hotel.hotel.rating}.`;
+            displayStr += "<p>" + `<h3>${hName}</h3>${ratingStr}<br><br><b>Price: $${price}</b>`;
+            displayStr += `<br>${hotel.hotel.hotelDistance.distance} ${hotel.hotel.hotelDistance.distanceUnit} from location`;
             if(hotel.hotel.description)
-                displayStr += `<br><br>Hotel description: ${hotel.hotel.description.text}`;
-            displayStr += `<br><br>Room type: ${offer.room.typeEstimated.category}, beds: ${offer.room.typeEstimated.beds}, ${offer.room.typeEstimated.bedType}. Description: ${offer.room.description.text}.</p><br>`
+                displayStr += `<br><br>${hotel.hotel.description.text}`;
+            displayStr += `<br><br>Room type: ${offer.room.typeEstimated.category}, beds: ${offer.room.typeEstimated.beds}, ${offer.room.typeEstimated.bedType}. Description: ${offer.room.description.text}.<br>`;
+
+            var amenities = "";
+            for(var a of hotel.hotel.amenities){
+                amenities += (amenities.length == 0 ? "" : ", ") + a.replace(/_/g, ' ').toLowerCase();
+            }
+
+            displayStr += `<br>Amenities: ${amenities}.</p><br>`
 
             i++;
         }
@@ -191,11 +213,17 @@ function flightSearch(){
                     continue;
             }
 
-            displayStr += "<p>" + `Option ${flight.id} --- Price: ${flight.price.total}, bookable seats: ${flight.numberOfBookableSeats}, one way: ${flight.oneWay} ${itinStr}` + "</p>";
+            displayStr += `<h3>Option ${flight.id}<span style='font-size:16px;font-weight:normal'>${itinStr}</span></h3><p>` +
+            `Price: ${flight.price.total}, bookable seats: ${flight.numberOfBookableSeats}, ${flight.oneWay ? 'one way' : 'roundtrip'}` + 
+             "</p>";
         }
 
         document.getElementById("matches").innerHTML = displayStr;
     })()
+}
+
+function wiki_search(){
+    
 }
 
 

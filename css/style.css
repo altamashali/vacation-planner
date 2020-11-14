@@ -4,26 +4,26 @@
   font-weight: 400;
 }
 /* Add a black background color to the top navigation */
+
 body{
   font-family: DidactGothic;
-/*   background-color: #f3b05a;
- */  background-image: url("../images/Awesome-Sunset-Wallpaper.jpg");
-     background-position: center;
-     background-repeat: no-repeat;
-     background-size: cover;
-   
+  /*background-color: #f3b05a;*/
+  background-image: url("../images/background-wallpaper.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;  
+  background-attachment: fixed; 
 
 }
+
 .topnav {
-/*   background-color: #a3586d;
- */  overflow: hidden;
- background: rgba(163,88,109, 0.5); ;
+/*   background-color: #a3586d; */  
+  overflow: hidden;
+  background: rgba(163,88,109, 0.9); ;
   border-radius: 10px;
   margin: 10px;
-/*   box-shadow: 0px 0px 10px 5px #a3586d;
- */  
- border-style: solid;
-  border-width: 1px;
+/*   box-shadow: 0px 0px 10px 5px #a3586d; */  
+
   border-color: #5c4a72; 
 }
 
@@ -76,14 +76,16 @@ body{
   
   
   color: white;
-  background: rgba(163,88,109, 0.4); ;
+  background: rgba(163,88,109, 0.9); ;
 
 /*   background-color: #f3b05a;
  */
 /*   background-color: #a3586d;
  */  
-/*  box-shadow: 0px 0px 10px 5px #a3586d;p
- */  margin-top: 20px;
+/*  box-shadow: 0px 0px 75px 5px #a3586d;
+ */ 
+ box-shadow: 0px 0px 50px 25px rgb(162, 87, 109, 0.5);
+  margin-top: 20px;
   vertical-align: top;
 }
 
@@ -92,6 +94,8 @@ input {
   padding: 5px;
   border-radius: 5px;
   margin: 5px;
+  color: rgb(48, 48, 48);
+  background-color: #fbce56;
 }
 
 .slidecontainer {
@@ -182,8 +186,8 @@ input {
 
 }
 .dropdown-menu{
-  background-color: #f3b05a;
-  color: #5c4a72;
+  background-color: #fbce56;
+  color: rgb(48, 48, 48);
   font-size: 15px;
   width: 150px;
   margin: 1px;
