@@ -55,7 +55,7 @@ function wikiSearch(location){
 function poiSearch(){
 
     var sel = document.getElementById("initial");
-    var location = sel.options[sel.selectedIndex].text;
+    var location = sel.options[sel.selectedIndex].value;
     wikiSearch(location);
 
     document.getElementById("matches").innerHTML = "Looking for matching attractions...";
@@ -174,7 +174,7 @@ function hotelSearch(){
 
 function flightSearch(){
 
-    var sel = document.getElementById("initial");
+    var sel = document.getElementById("destination");
     var loc = sel.options[sel.selectedIndex].text;
     wikiSearch(loc);
 
@@ -247,9 +247,6 @@ function flightSearch(){
     })()
 }
 
-function wiki_search(){
-    
-}
 
 
 $(function(){
