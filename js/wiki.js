@@ -1,28 +1,10 @@
-var xhr = new XMLHttpRequest();
+async function queryIntro(pageTitle){
+    
+    var url = `https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro=1&explaintext=1&titles=${pageTitle}`;
+    
+    url = "https://cors-anywhere.herokuapp.com/" + url; // CORS proxy
+    
+    return fetch(url)
+    .then(response => response.json());
 
-var url = "https://en.wikipedia.org/w/api.php?action=query&origin=*&format=json&generator=search&gsrnamespace=0&gsrlimit=5&gsrsearch=";
-var locationName = "'" + document.getElementById("destination") + "'";
-// if locationname has spaces, replace with underscore
-url = url + locationName;
-// Provide 3 arguments (GET/POST, The URL, Async True/False)
-xhr.open('GET', url, true);
-
-// Once request has loaded...
-xhr.onload = function() {
-    // Parse the request into JSON
-    var data = JSON.parse(this.response);
-
-    // Log the data object
-    console.log(data);
-
-    // Log the page objects
-    console.log(data.query.pages)
-
-    // Loop through the data object
-    // Pulling out the titles of each page
-    for (var i in data.query.pages) {
-        console.log(data.query.pages[i].title);
-    }
 }
-// Send request to the server asynchronously
-xhr.send();

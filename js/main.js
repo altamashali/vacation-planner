@@ -28,24 +28,39 @@ window.onload = function() {
     }
 };
 
-function test(){
-}
-function wikiSearch(){
-    document.getElementById("matches").innerHTML = "Looking for destination description...";
+function wikiSearch(location){
+    document.getElementById("dest-desc").innerHTML = "Looking for destination description...";
 
     (async () => {
         
-        console.log(document.getElementById("destination").value); 
+        try {
+            var response = await queryIntro(location);
+            console.log(response);
+
+            var pages = response.query.pages;
+            var page = pages[Object.keys(pages)[0]];
+
+            document.getElementById("dest-desc").innerHTML = page.extract;
+        }
+        catch (e){
+            console.error(e);
+            console.error(e.stack);
+            document.getElementById("dest-desc").innerHTML = "No destination description found.";
+        }
+
         
     })()
 }
+
 function poiSearch(){
+
+    var sel = document.getElementById("initial");
+    var location = sel.options[sel.selectedIndex].text;
+    wikiSearch(location);
+
     document.getElementById("matches").innerHTML = "Looking for matching attractions...";
 
     (async () => {
-
-        var sel = document.getElementById("initial");
-        var location = sel.options[sel.selectedIndex].text;
 
         var tags = [];
         
@@ -86,6 +101,11 @@ function poiSearch(){
 }
 
 function hotelSearch(){
+
+    var sel = document.getElementById("location");
+    var loc = sel.options[sel.selectedIndex].text;
+    wikiSearch(loc);
+
     document.getElementById("matches").innerHTML = "Looking for matching hotels...";
     (async () => {
 
@@ -153,6 +173,11 @@ function hotelSearch(){
 }
 
 function flightSearch(){
+
+    var sel = document.getElementById("initial");
+    var loc = sel.options[sel.selectedIndex].text;
+    wikiSearch(loc);
+
     document.getElementById("matches").innerHTML = "Looking for matching flights...";
     (async () => {
         var stops = -1;
