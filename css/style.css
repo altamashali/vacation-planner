@@ -8,7 +8,7 @@
 body{
   font-family: DidactGothic;
   /*background-color: #f3b05a;*/
-  background-image: url("../images/background-wallpaper.jpg");
+  background-image: url("../images/background-wallpaper-blurred.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;  
@@ -17,20 +17,24 @@ body{
 }
 
 .topnav {
-/*   background-color: #a3586d; */  
   overflow: hidden;
-  background: rgba(163,88,109, 0.9); ;
+  background: linear-gradient(to left, #fcb85891, #8a6ca2af); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  font-weight: bold;
   border-radius: 10px;
   margin: 10px;
-/*   box-shadow: 0px 0px 10px 5px #a3586d; */  
+  
+  /*   background-color: #a3586d; */  
 
-  border-color: #5c4a72; 
+/*    border-color: #5c4a72; 
+ background: rgba(163,88,109, 0.9); ;
+  box-shadow: 0px 0px 10px 5px #a3586d; */  
+
 }
 
 /* Style the links inside the navigation bar */
 .topnav a {
   float: left;
-  color: white;
+  color:white;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -68,23 +72,11 @@ body{
   padding: 20px;
   margin: 10px;
   margin-bottom: 30px;
-
-  /* border-style: solid;
-  border-color: #5c4a72;
-  border-width: 2px; */
   border-radius: 10px;
-  
+  font-weight: bold;
   
   color: white;
-  background: rgba(163,88,109, 0.9); ;
-
-/*   background-color: #f3b05a;
- */
-/*   background-color: #a3586d;
- */  
-/*  box-shadow: 0px 0px 75px 5px #a3586d;
- */ 
- box-shadow: 0px 0px 50px 25px rgb(162, 87, 109, 0.5);
+  background: linear-gradient(to left, #fcb85891, #8a6ca2af); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   margin-top: 20px;
   vertical-align: top;
 }
@@ -218,4 +210,23 @@ div.container2 {
 
 html {
   scroll-behavior: smooth;
+}
+#flight-results{
+  border-radius: 10px;
+  text-align: center;
+  width: 100%;
+
+}
+#flight-results th{
+  font-size: 20px;
+  padding: 10px;
+  color: black;
+  background-color: #fbce56;
+}
+#flight-results td{
+  padding: 5px;
+  font-size: 18px;
+}
+.flight-results-carrier {
+  font-size: 12px;
 }

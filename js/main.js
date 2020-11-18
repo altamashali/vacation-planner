@@ -217,7 +217,7 @@ function flightSearch(){
         var response = await queryFlight(departure, arrival, departureDate, returnDate, 1, nonStop, includedAirlines, "USD", getBudget(), 20);
         console.log(response);
 
-        var displayStr = "";
+        var displayStr = "<table id='flight-results'><tr><th>Flight #</th><th>Price</th><th>Bookable Seats</th><th>Type</th><th>Segments</th></tr>";
 
         for(var flight of response.data) {
             var itinStr = "";
@@ -229,14 +229,15 @@ function flightSearch(){
                     if(!segStr){
                         segStr = segment.departure.iataCode;
                     }
-                    segStr += ` --${segment.carrierCode}--> ${segment.arrival.iataCode}`;
+                    segStr += ` <span class='flight-results-carrier'>—${segment.carrierCode}—></span> ${segment.arrival.iataCode}`;
                 }
                 var name = `Itinerary ${i}`;
                 if(i == 1)
-                    name = "Outgoing trip";
+                    name = "Outgoing";
                 if(i == 2)
-                    name = "Return trip";
-                itinStr += `<br>&nbsp;&nbsp;&nbsp;&nbsp;${name}: segments ${itinerary.segments.length}: ${segStr}`;
+                    name = "Return";
+                // itinStr += `<br>&nbsp;&nbsp;&nbsp;&nbsp;${name}: segments ${itinerary.segments.length}: ${segStr}`;
+                itinStr += `<td>${name} (${itinerary.segments.length}): ${segStr}</td>`;
                 i++;
             }
 
@@ -245,11 +246,14 @@ function flightSearch(){
                     continue;
             }
 
-            displayStr += `<h3>Option ${flight.id}<span style='font-size:16px;font-weight:normal'>${itinStr}</span></h3><p>` +
-            `Price: ${flight.price.total}, bookable seats: ${flight.numberOfBookableSeats}, ${flight.oneWay ? 'one way' : 'roundtrip'}` + 
-             "</p>";
+            displayStr += `<tr><td>Flight #${flight.id}</td><td>$${flight.price.total}<td>${flight.numberOfBookableSeats}</td><td>${flight.oneWay ? 'one way' : 'round-trip'}</td>${itinStr}</tr>`;
+
+            // displayStr += `<h3>Flight #${flight.id}<span style='font-size:16px;font-weight:normal'>${itinStr}</span></h3><p>` +
+            // `Price: ${flight.price.total}, bookable seats: ${flight.numberOfBookableSeats}, ${flight.oneWay ? 'one way' : 'roundtrip'}` + 
+            //  "</p>";
         }
 
+        displayStr += "</table>"
         document.getElementById("matches").innerHTML = displayStr;
     })()
 }
