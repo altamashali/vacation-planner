@@ -39,8 +39,15 @@ function wikiSearch(location){
 
             var pages = response.query.pages;
             var page = pages[Object.keys(pages)[0]];
+            
+            var output_text = page.extract.split(". "); 
+            var final_output = "";
+            
+            for (var i = 0; i < 5; i++){
+                final_output += output_text[i] + ". ";
+            }
 
-            document.getElementById("dest-desc").innerHTML = page.extract;
+            document.getElementById("dest-desc").innerHTML = final_output;
         }
         catch (e){
             console.error(e);
@@ -92,7 +99,7 @@ function poiSearch(){
         }
 
         for(var poi of response.results) {
-            displayStr += "<p>" + `<h3>${poi.name}: <span style='font-size:16px;font-weight:normal'>${poi.snippet}</span></h3><br><br>${poi.intro}</p>`
+            displayStr += "<p>" + `<h3>${poi.name}: <span style='font-size:16px;font-weight:normal'>${poi.snippet}</span></h3>${poi.intro}</p><br>`
             i++;
         }
 
@@ -174,7 +181,7 @@ function hotelSearch(){
 
 function flightSearch(){
 
-    var sel = document.getElementById("destination");
+    var sel = document.getElementById("destination"); //changes from intial to destination
     var loc = sel.options[sel.selectedIndex].text;
     wikiSearch(loc);
 
