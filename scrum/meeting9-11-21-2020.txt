@@ -1,0 +1,27 @@
+The previous meeting was 15 minutes long.
+
+
+During the last meeting we worked on:
+
+Fixing budget slider for pages
+Removing unnecessary options
+Adding more options for flights and restaurant
+
+
+Our accomplishments:
+
+Get results from the restaurant, transportation API
+Get specific data for restaurants, communing, and transportation
+Get price data for restaurants, communing, and transportation
+
+
+Tasks completed:
+
+Fix budget slider on housing page
+Add a direct flight option on the flights page
+Remove airbnb from the housing page
+Make budget slider text box more clear
+Add number of guest option on the restaurant's page
+Change excursion option to attractions
+Develop column structure for About Us page
+Remove rental homes from housing page

@@ -73,6 +73,15 @@ input {
   color: rgb(48, 48, 48);
   background-color: #fbce56;
 }
+#Guests{
+  width: 50px;
+}
+#rooms{
+  width: 50px;
+}
+#radius{
+  width: 50px;
+}
 .slidecontainer {
   width: 20%; /* Width of the outside container */
   display: inline-block;

@@ -80,13 +80,13 @@
                 <h1>Filters:</h1>
                 
                 <p>Number of Guests</p>
-                <input type="text" id="Guests" style="text-align: center;" size="1px" name="Guests" value="2">   
+                <input type="number" min="1" id="Guests" style="text-align: center;" size="1px" name="Guests" value="2">   
 
                 <p>Number of Rooms</p>
-                <input type="text" id="rooms" style="text-align: center;" size="1px" name="rooms" value="1">   
+                <input type="number" min="1" id="rooms" style="text-align: center;" size="1px" name="rooms" value="1">   
 
                 <p>Max distance from location (miles)</p>
-                <input type="text" id="radius" style="text-align: center;" size="1px" name="radius" value="50">   
+                <input type="number" min="1" max="300" id="radius" style="text-align: center;" size="1px" name="radius" value="50">   
                 
                 <p>Rating</p>
                 <input type="checkbox" id="onestar" name="houseRate" value="1" checked>

@@ -1,0 +1,27 @@
+The previous meeting was 15 minutes long.
+
+
+During the last meeting we worked on:
+
+Discuss current state of project 
+Formally discuss Sprint 2 tasks which have been completed
+Confer on Sprint 3 tasks which can be pushed to backlog for Sprint 3
+Discuss any additional items to address before Sprint 3
+
+
+Our accomplishments:
+
+Develop accessibility accommodations
+Reorganize file tree/directory system
+Add About Us/Accessibility descriptions
+
+
+Tasks completed:
+
+Decide on button color for most visibility
+Develop button to export data collected
+Decide on specific data to collect for restaurants from each API
+Decide on specific data to collect for hotels from each API
+Decide on specific data to collect from rental homes API
+Decide on specific data to collect from flight API
+Decide on specific data to collect from transportation API

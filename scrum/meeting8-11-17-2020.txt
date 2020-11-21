@@ -1,0 +1,28 @@
+The previous meeting was 15 minutes long.
+
+
+During the last meeting we worked on:
+
+Get results from the restaurant, transportation API
+Get specific data for restaurants, communing, and transportation
+Get price data for restaurants, communing, and transportation
+
+
+Our accomplishments:
+
+Changing excursion to attractions
+Get successful results for commuting and attractions
+Having accessibility options available 
+
+
+Tasks completed:
+Add number of guest option on the restaurant's page
+Change excursion option to attractions
+Add arrows on the textbox for number of guests
+Remove rental homes from housing page
+Add color blind option on website
+Successfully retrieve name data for commuting
+Successfully retrieve name data for attractions
+Develop column structure for About Us page
+Develop text explaining how to use website
+Write accessibility statement to About Us page
