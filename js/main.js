@@ -217,7 +217,9 @@ function flightSearch(){
         var response = await queryFlight(departure, arrival, departureDate, returnDate, 1, nonStop, includedAirlines, "USD", getBudget(), 20);
         console.log(response);
 
-        var displayStr = "<table id='flight-results'><tr><th>Flight #</th><th>Price</th><th>Bookable Seats</th><th>Type</th><th>Segments</th></tr>";
+        var displayStr = "";
+
+        var isRoundTrip = false;
 
         for(var flight of response.data) {
             var itinStr = "";
@@ -234,10 +236,12 @@ function flightSearch(){
                 var name = `Itinerary ${i}`;
                 if(i == 1)
                     name = "Outgoing";
-                if(i == 2)
+                if(i == 2){
                     name = "Return";
+                    isRoundTrip = true;
+                }
                 // itinStr += `<br>&nbsp;&nbsp;&nbsp;&nbsp;${name}: segments ${itinerary.segments.length}: ${segStr}`;
-                itinStr += `<td>${name} (${itinerary.segments.length}): ${segStr}</td>`;
+                itinStr += `<td class='flight-seg'>${name} (${itinerary.segments.length}): ${segStr}</td>`;
                 i++;
             }
 
@@ -246,12 +250,19 @@ function flightSearch(){
                     continue;
             }
 
-            displayStr += `<tr><td>Flight #${flight.id}</td><td>$${flight.price.total}<td>${flight.numberOfBookableSeats}</td><td>${flight.oneWay ? 'one way' : 'round-trip'}</td>${itinStr}</tr>`;
+            displayStr += `<tr><td>Flight #${flight.id}</td><td>$${flight.price.total}<td>${flight.numberOfBookableSeats}</td><td>${flight.oneWay ? 'One Way' : 'Round Trip'}</td>${itinStr}</tr>`;
 
             // displayStr += `<h3>Flight #${flight.id}<span style='font-size:16px;font-weight:normal'>${itinStr}</span></h3><p>` +
             // `Price: ${flight.price.total}, bookable seats: ${flight.numberOfBookableSeats}, ${flight.oneWay ? 'one way' : 'roundtrip'}` + 
             //  "</p>";
         }
+
+        var displayStrHeader = "<table id='flight-results'><tr><th>Flight #</th><th>Price</th><th>Bookable Seats</th><th>Type</th><th>Outgoing Segment</th>";
+        if(isRoundTrip)
+            displayStrHeader += "<th>Return Segments</th>";
+        displayStrHeader += "</tr>";
+        
+        displayStr = displayStrHeader + displayStr;
 
         displayStr += "</table>"
         document.getElementById("matches").innerHTML = displayStr;
